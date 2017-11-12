@@ -1,0 +1,12 @@
+version: "2"
+services:
+  webserver:
+    image: httpd
+    ports:
+     - "80:80"
+    volumes:
+     - /DockerVolumes/infWebserver:/usr/local/apache2/htdocs/
+    networks:
+      - infraNet
+networks:
+  infraNet:
