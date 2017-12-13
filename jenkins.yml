@@ -1,0 +1,16 @@
+version: "2.2"
+services:
+  jenkins:
+    image: 127.0.0.1:5000/mm/jenkins
+    ports:
+     - "8083:8080"
+     - "50000:50000"
+    restart: always
+    privileged: true
+    volumes:
+     - /DockerVolumes/jenkins_home:/var/jenkins_home
+     - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - infraNet
+networks:
+  infraNet:
