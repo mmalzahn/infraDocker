@@ -7,7 +7,6 @@ services:
     restart: always
     volumes:
      - /DockerVolumes/regData:/var/lib/registry
-#     - /DockerVolumes/conf/registryproxy:/etc/docker/registry:ro
     environment:
      - REGISTRY_PROXY_REMOTEURL=https://registry-1.docker.io
     networks:
@@ -21,9 +20,6 @@ services:
      - registryproxy
     volumes:
      - /DockerVolumes/registryData:/var/lib/registry
- #    - /DockerVolumes/conf/registry:/etc/docker/registry:ro
-#    environment:
-#     - REGISTRY_PROXY_REMOTEURL=http://registryproxy:5005
     networks:
       - infraNet
 networks:

@@ -1,4 +1,5 @@
-FROM jenkins
+FROM jenkins:alpine
 USER root
-RUN apt-get update && apt-get install -y sudo 
+RUN apk add --no-cache sudo docker
+#RUN apt-get update && apt-get install -y sudo docker
 USER jenkins
